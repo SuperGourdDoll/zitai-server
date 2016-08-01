@@ -1,0 +1,6 @@
+[ 2016-08-01T19:58:40+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001447s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\wamp\www\Application\Home\Conf\config.php 第 6 行.
+
