@@ -24,5 +24,5 @@ return array(
 	'DB_CHARSET' => 'utf8',     //数据库字符集
 	'SHOW_PAGE_TRACE' => true,
     'TOKEN_KEY'=>'sgd_zitai',  //供用户使用token
-	
+	'DEFAULT_PAGESIZE'=>10,
 );

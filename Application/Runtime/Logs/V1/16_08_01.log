@@ -214,3 +214,15 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
 NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\wamp\www\Application\V1\Conf\config.php 第 6 行.
 
+[ 2016-08-01T22:06:24+08:00 ] ::1 /index.php/users/login?username=allen&userpwd=123321
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\wamp\www\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-01T22:06:38+08:00 ] ::1 /index.php/users/login?username=allen&userpwd=123321
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\wamp\www\Application\V1\Conf\config.php 第 6 行.
+
