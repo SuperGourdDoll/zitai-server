@@ -9,7 +9,7 @@ import('Util\TokenUtil');
 */
 class IndexController extends Controller {
     public function index(){
-        $token= TokenUtil::makeToken("Token:Allen is more handsome than Bryant");
+        $token= TokenUtil::makeToken("Token:Kane is more handsome than Bryant");
         echo $token;
         echo '<br>';
         echo TokenUtil::verifyToken($token);
