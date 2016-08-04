@@ -1,0 +1,64 @@
+[ 2016-08-03T23:15:23+08:00 ] 127.0.0.1 /zitai-server/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:17:08+08:00 ] 127.0.0.1 /zitai-server/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:17:22+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:18:08+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:19:02+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics/getData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:21:55+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics/getData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-08-03T23:23:16+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics/getData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-08-03T23:25:41+08:00 ] 127.0.0.1 /zitai-server/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+
+[ 2016-08-03T23:25:53+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics/getData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-08-03T23:26:52+08:00 ] 127.0.0.1 /zitai-server/index.php/Graphics/getData
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001011s ]
+NOTIC: [8] Use of undefined constant _ROOT_ - assumed '_ROOT_' E:\WampServer\wamp\www\zitai-server\Application\V1\Conf\config.php 第 6 行.
+ERR: 非法操作:getData
+
