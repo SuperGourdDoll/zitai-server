@@ -27,6 +27,23 @@ class CommonJsonUtil
         $resultArray['msg'] = $msg;
         echo json_encode($resultArray);
     }
-}
 
+    /*
+     * 上传成功或失败结果，转JSON输出
+     */
+    public static function uploadResult($data){
+        $resultArray = array();
+        //上传成功
+        if($data){
+            $resultArray['code'] = 0;
+            $resultArray['msg'] = "success";
+        } else {
+        //上传失败
+            $resultArray['code'] = 1;
+            $resultArray['msg'] = "fail";
+        }
+        echo json_encode($resultArray);
+    }
+
+}
 ?>
