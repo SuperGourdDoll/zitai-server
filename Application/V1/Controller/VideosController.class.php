@@ -7,9 +7,9 @@ use V1\Util\CommonJsonUtil;
 */
 class VideosController extends Controller {
     public function vlist($page=0){
-        $Videos=M('videos');
+        $Videos=D('videos');
 
-       $data= $Videos->order('id desc')->page($page,C('DEFAULT_PAGESIZE'))->select();
+       $data= $Videos->relation(true)->field('comments',true)->order('id desc')->page($page,C('DEFAULT_PAGESIZE'))->select();
 
         if(count($data)>=0) {
             for($i=0;$i<count($data);$i++){
