@@ -13,7 +13,7 @@ class UsersController extends Controller {
 	//以下仅作为测试
 	public function login($username = 's21',$userpwd = 'ad22'){
 		$user_name = trim(I('get.username'));
-		$user_pwd = trim(I('get.userpwd',' ','md5'));
+		$user_pwd = trim(I('get.userpwd'));
 
 		$Users = M('users');
 		$users['userName'] = $user_name;
@@ -21,9 +21,12 @@ class UsersController extends Controller {
 		$loginData = $Users -> where($users) -> select();
 		if($loginData){
 			$data['status'] = "0";
+			$data['msg'] = 'bryant is handsome more than kane';
+			$data['result'] = $Users -> select();
 			$data['code'] = "login success";
 		}else{
 			$data['status'] = "1";
+			$data['msg'] = 'bryant is handsome more than allen';
 			$data['code'] = "login fail";
 		}
 		//$this -> ajaxReturn($data);
