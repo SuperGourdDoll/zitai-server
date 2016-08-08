@@ -5,7 +5,7 @@ class CommonJsonUtil
     /**成功 转json并输出
      * @param int $code
      * @param string $msg
-     * @param 数据源
+     * @param array $data 数据源
      * @return mixed
      */
     public static function toSuccessJson($data, $code = 0, $msg = 'ok')
@@ -19,14 +19,12 @@ class CommonJsonUtil
     /**失败 转json并输出
      * @param int $code 不转默认成功
      * @param string $msg
-     * @param string $errorMsg  错误信息
      * @return mixed
      */
-    public static function toFailJson($errorMsg = '', $code = 1, $msg = 'fail')
+    public static function toFailJson($code = 1, $msg = 'fail')
     {
         $resultArray['code'] = $code;
         $resultArray['msg'] = $msg;
-        $resultArray['errorMsg'] = $errorMsg;
         echo json_encode($resultArray);
     }
 

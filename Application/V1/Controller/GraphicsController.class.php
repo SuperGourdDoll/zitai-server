@@ -31,7 +31,7 @@ class GraphicsController extends Controller {
         $upload->savePath =  './images/';// 设置附件上传目录
         $info = $upload -> upload();
         if(!$info) {// 上传错误提示错误信息
-            CommonJsonUtil::toFailJson($upload->getError());
+            CommonJsonUtil::toFailJson(1, $upload->getError());
         }else {// 上传成功
             $netAddress = "192.168.1.102";
             $public = "http://".$netAddress."/zitai-server/Uploads";
