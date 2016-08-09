@@ -17,24 +17,26 @@ class GraphicsController extends Controller {
      *         upload_time  上传时间戳
      */
     public function uploadGraphics(){
-        $userID = $_POST["user_id"];
-        $content = $_POST["content"];
-        $uploadTime = $_POST["upload_time"];
-//        $userID = 39;
-//        $content = "青春,不后悔";
-//        $uploadTime = 23647652734327;
+//        $userID = $_POST["user_id"];
+//        $content = $_POST["content"];
+//        $uploadTime = $_POST["upload_time"];
+
+        $userID = 39;
+        $content = "青春,不后悔";
+        $uploadTime = 23647652734327;
 
         //保存图片到服务器
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize  = 3145728 ;// 设置附件上传大小 3M
         $upload->allowExts  = array('jpg', 'png', 'jpeg');// 设置附件上传类型
+        $upload -> rootPath = './Public/';
         $upload->savePath =  './images/';// 设置附件上传目录
         $info = $upload -> upload();
         if(!$info) {// 上传错误提示错误信息
             CommonJsonUtil::toFailJson(1, $upload->getError());
         }else {// 上传成功
             $netAddress = "192.168.1.102";
-            $public = "http://".$netAddress."/zitai-server/Uploads";
+            $public = "http://".$netAddress."/zitai-server/Public";
             $imgFile = $public.strstr($info["img"]["savepath"].$info["img"]["savename"],'/');//拿到图片的全路径存储名称
             $ary = array(
                 "userId" =>  $userID,
@@ -53,9 +55,9 @@ class GraphicsController extends Controller {
      */
     public function getGraphicsLists($page,$userID=-1){
         if($userID == -1){
-            $result = M("graphics") -> order("uploadTime desc") -> page($page, C(DEFAULT_PAGESIZE)) -> select();
+            $result = M("graphics") -> order("uploadTime desc") -> page($page, 10) -> select();
         } else {
-            $result = M("graphics") -> where("userid='$userID'") -> order("uploadTime desc") -> page($page, C(DEFAULT_PAGESIZE)) -> select();
+            $result = M("graphics") -> where("userid='$userID'") -> order("uploadTime desc") -> page($page, 10) -> select();
         }
         for($i=0;$i < count($result);$i++){
             $result[$i]["id"] = intval($result[$i]["id"]);
