@@ -22,7 +22,7 @@ return array(
 	'DB_PORT' => '3306',        //端口
 	'DB_PREFIX' => 'sgd_',      //数据库表前缀
 	'DB_CHARSET' => 'utf8',     //数据库字符集
-	'SHOW_PAGE_TRACE' => false,
+	'SHOW_PAGE_TRACE' => true,
     'TOKEN_KEY'=>'sgd_zitai',  //供用户使用token
-	'DEFAULT_PAGESIZE'=>10,
+	
 );

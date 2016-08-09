@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="PROJECT" charset="GBK" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Application/V1/Controller/ComsController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/V1/Controller/GraphicsController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/V1/Util/CommonJsonUtil.class.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

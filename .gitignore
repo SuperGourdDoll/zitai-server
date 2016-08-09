@@ -61,3 +61,5 @@ Application/Runtime/Logs/V1/16_08_03.log
 Application/Runtime/Logs/V1/16_08_04.log
 ThinkPHP/Library/Think/Verify/zhttfs/
 Uploads/
+Application/Runtime/
+/.gitignore
