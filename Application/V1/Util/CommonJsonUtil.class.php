@@ -12,7 +12,6 @@ class CommonJsonUtil
     {
         $resultArray['code'] = $code;
         $resultArray['msg'] = $msg;
-        if($data!=null)
         $resultArray['data'] = $data;
         echo json_encode($resultArray);
     }
