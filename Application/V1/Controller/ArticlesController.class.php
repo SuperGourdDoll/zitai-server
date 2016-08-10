@@ -4,24 +4,67 @@ use Think\Controller;
 use Think\Db\Driver;
 
 /**
-*  ¸Ã¿ØÖÆÆ÷·ÅÖÃËùÓĞµÄ ÎÄÕÂÄ£¿é ÄÚÈİ
+*  è¯¥æ§åˆ¶å™¨æ”¾ç½®æ‰€æœ‰çš„ æ–‡ç« æ¨¡å— å†…å®¹
 */
 class ArticlesController extends Controller {
 
-	//A·½·¨²âÊÔ  ±ØĞë¼Ì³Ğ¹«¹²·½·¨Àà
+	//Aæ–¹æ³•æµ‹è¯•è¿æ¥
     public function index(){
-		echo "´Ë´¦ºÜbryant";
+		echo "æ­¤å¤„å¾ˆbryant";
 		$Articles = A("articles");
 		$Articles -> test_pdo();
 	}
 
-	//R·½·¨²âÊÔ£¬Ê¹ÓÃ·â×°ºÃµÄsqlÓï¾ä£¬ÎªÉ¶×Ó²»ÄÜ³É¹¦ÄØ£¿£¿£¿£¿£¿£¿£¡£¡£¡£¡
+
+	/**
+	 * å®¢æˆ·ç«¯è·å–æ‰€æœ‰æ–‡ç« å†…å®¹ä¿¡æ¯
+	 */
+	public function getArticles($page,$userId=-1){
+		$Articles = M("articles");
+		if($userId == -1){
+			$Articles -> order("uploadTime desc") -> page($page, C(DEFAULT_PAGESIZE)) -> select();
+			$sql = $Articles -> getLastSql();
+		}else{
+			$Articles -> where("userId = '$userId'") -> order("uploadTime desc") -> select();
+			$sql = $Articles -> getLastSql();
+		}
+		$data = R('Coms/test_pdo_normal');
+		$prepare = $data -> prepare($sql);
+		$prepare -> execute();
+		$result = $prepare -> fetchAll(\PDO::FETCH_ASSOC);
+		if($result){
+			echo CommonJsonUtil::toSuccessJson($result);
+		}else{
+			echo CommonJsonUtil::toFailJson();
+		}
+
+	}
+
+	/**
+	 * ç”¨æˆ·å‘å¸ƒæ–‡ç« ï¼Œå³åŠ å…¥æ•°æ®åº“æ“ä½œ
+	 */
+	public function setArticles($userId = 233,$title = 'kai',$content = 's3f'){
+		$user_id = trim(I('get.userId'));
+		$user_title = trim(I('get.title'));
+		$user_content = trim(I('get.content'));
+
+		$Articles = M("articles");
+		$user_data['userId'] = $user_id;
+		$user_data['title'] = $user_title;
+		$user_data['content'] = $user_content;
+		$user_data['uploadTime'] = date('Y-m-d H:i:s');
+		$Articles -> add($user_data);
+
+		CommonJsonUtil::toSuccessJson();
+	}
+
+	//Ræ–¹æ³•æµ‹è¯•è¿æ¥ï¼Œæ— å‚æ•°å¾—åˆ°è¿”å›å€¼
 	public function index_test_R(){
 		$data = R('Coms/test_pdo');
 		$this -> ajaxReturn($data);
 	}
 
-	//R·½·¨²âÊÔ£¬PDOÁ¬½Ó£¬Ö»ÓĞ»ù±¾²¿·Ö
+	//Ræ–¹æ³•æµ‹è¯•é“¾æ¥2ï¼Œåªæœ‰åŸºæœ¬çš„å‡ æ¡ä¿¡æ¯ï¼Œ
 	public function index_test_normal(){
 		$Articles = M('articles');
 		$Articles -> where('id = 2') -> select();
@@ -33,12 +76,12 @@ class ArticlesController extends Controller {
 		$this -> ajaxReturn($table);
 	}
 
-	//R·½·¨²âÊÔ£¬´«ÈësqlÓï¾ä£¬·µ»Ø²éÑ¯ºóµÄÖµ£¬
+	//Ræ–¹æ³•æµ‹è¯•è¿æ¥3ï¼Œæœ‰å‚æ•°ï¼Œå‚æ•°ä¸ºsqlè¯­å¥
 	public function index_test_has_para(){
 		echo "Here used to test the R method";
 		$Articles = M('articles');
 		$Articles -> where('id = 2') -> select();
-		$sql_res = $Articles -> getLastSql();   //°Ñ·â×°ºÃsql·½·¨×ª³É³£¹æsqlÓï¾ä
+		$sql_res = $Articles -> getLastSql();   //å¾—åˆ°ä¸Šæ¡æŸ¥è¯¢qlè¯­å¥
 
 		$data = R('Coms/test_pdo_has_para',array($sql_res));
 		$result['status'] = 0;
@@ -48,7 +91,7 @@ class ArticlesController extends Controller {
 	}
 
 
-	//²âÊÔPDOÁ¬½Ó
+	//æµ‹è¯•PDOè¿æ¥
 	/*public function test_pdo(){
 		$dsn = 'mysql:dbname=super_gd;host=localhost;port=3306';
 		$username = 'root';
@@ -60,7 +103,7 @@ class ArticlesController extends Controller {
 			));
 		$sql = "select * from sgd_articles";
 		$prepare = $db -> prepare($sql);
-		$prepare -> execute();   //Ìí¼ÓÌõ¼şÊı¾İ
+		$prepare -> execute();   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$table = $prepare -> fetchAll(\PDO::FETCH_ASSOC);
 		//var_dump($table);
 		$this -> ajaxReturn($table);

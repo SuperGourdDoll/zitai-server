@@ -4,7 +4,7 @@ use Think\Controller;
 use Think\Db\Driver;
 
 /**
- *  该控制器放置所有的 文章模块 内容
+ *  该控制器放置一些公共方法
  */
 class ComsController extends Controller {
 
