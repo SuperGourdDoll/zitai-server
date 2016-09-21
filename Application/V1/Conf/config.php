@@ -15,11 +15,11 @@ return array(
 	
 	//添加数据库配置信息
 	'DB_TYPE' => 'mysql',   //数据库类型
-	'DB_HOST' => 'localhost',        //服务器地址
-	'DB_NAME' => 'super_gd',        //数据库名 
-	'DB_USER' => 'root',        //用户名
-	'DB_PWD' => 'sgdsgd',         //密码
-	'DB_PORT' => '3306',        //端口
+	'DB_HOST' => 'sqld.duapp.com',        //服务器地址
+	'DB_NAME' => 'QPCLIDlymfmgJUwTnmSw',        //数据库名 
+	'DB_USER' => '493a4fc7b0354df099fb2fa11df39b4a',        //用户名
+	'DB_PWD' => 'd462c17184e94cf284605cfdbc2ef4fc',         //密码
+	'DB_PORT' => '4050',        //端口
 	'DB_PREFIX' => 'sgd_',      //数据库表前缀
 	'DB_CHARSET' => 'utf8',     //数据库字符集
 	'SHOW_PAGE_TRACE' => true,
